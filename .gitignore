@@ -1,0 +1,6 @@
+*.pyc
+.DS_Store
+Thumbs.db
+.environment
+.idea
+etc/conf/local_settings.py
