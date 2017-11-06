@@ -24,7 +24,7 @@ $ source .environment/bin/activate
 $ export PYTHONPATH="$PYTHONPATH:." # . corresponds to current directory(project-dir)
 ```
 
-3. Go to project root and install requirements/dependencies as 
+3. Under ```<project-dir>``` install requirements/dependencies as 
 
 ```sh 
 $ pip install -r requirements.txt
