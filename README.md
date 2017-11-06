@@ -7,10 +7,11 @@ python 2.x, pip, AWS account (for S3)
 
 # How to run?
 1. Put S3 credentials under ```etc/conf/settings.py```. Other configurations can also be changed but they are optional.
-2. Create virual environment and activate it as
+2. Move to current project-dir & create virual environment and then activate it as
 
 
 ```sh
+$ cd <project-dir>
 $ virtualenv .environment
 $ source .environment/bin/activate
 ```
@@ -22,5 +23,14 @@ $ source .environment/bin/activate
 export PYTHONPATH="$PYTHONPATH:." # . corresponds to current directory(project-dir)
 ```
 
-3. Go to project root and install requirements/dependencies as - ```pip install -r requirements.txt```
-4. Then run sync.py as - ```python tests/sync.py```
+3. Go to project root and install requirements/dependencies as 
+
+```sh 
+pip install -r requirements.txt
+```
+
+4. Then run sync.py as  
+
+```sh
+python tests/sync.py
+```
