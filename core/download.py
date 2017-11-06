@@ -36,8 +36,11 @@ class Downloader(object):
                     update_journal = True
                     print "[WARN] Deleting... %s" % local_file_comp_path
                     s3_keyname = local_file_comp_path[len(settings.LOCAL_SYNC_LOCATION) + 1:]
-                    s3_client.delete_object(Bucket=settings.S3_BUCKET, Key=s3_keyname)
-                    delete_from_local(local_file_comp_path)
+                    try:
+                        s3_client.delete_object(Bucket=settings.S3_BUCKET, Key=s3_keyname)
+                        delete_from_local(local_file_comp_path)
+                    except:
+                        pass
 
         if update_journal:
             #print "[DEBUG] Updating journal..."
