@@ -12,7 +12,7 @@ class Downloader(object):
 
     @classmethod
     def download_and_sync(self):
-        threading.Timer(20.0, Downloader.download_and_sync).start()  # called every 20 sec
+        threading.Timer(settings.DOWNLOAD_AND_SYNC_DURATION, Downloader.download_and_sync).start()  # called every 20 sec
         Downloader().lazy_download_recursively()
         global remote_file_complete_paths
         remote_file_complete_paths = {}

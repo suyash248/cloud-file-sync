@@ -5,8 +5,6 @@ from etc.conf import settings
 from core.upload import Uploader
 from core.delete import delete_file
 
-WATCH_DURATION_SEC = 1
-
 class Watcher:
     def __init__(self):
         self.observer = Observer()
@@ -17,7 +15,7 @@ class Watcher:
         self.observer.start()
         try:
             while True:
-                time.sleep(WATCH_DURATION_SEC)
+                time.sleep(settings.UPLOAD_AND_SYNC_DURATION)
         except:
             self.observer.stop()
             print "[ERROR] Watcher... stopped watching for further changes"
@@ -39,7 +37,7 @@ class Handler(FileSystemEventHandler):
 
 def watch():
     print "[INFO] Watcher... started watching changes in directory {watch_dir} every {watch_duration} second(s)" \
-        .format(watch_dir=settings.LOCAL_SYNC_LOCATION, watch_duration=WATCH_DURATION_SEC)
+        .format(watch_dir=settings.LOCAL_SYNC_LOCATION, watch_duration=settings.UPLOAD_AND_SYNC_DURATION)
     w = Watcher()
     w.run()
 
