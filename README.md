@@ -1,13 +1,13 @@
-# file-sync
+# File-sync
 File sync(Similar to Google drive, Dropbox) using AWS S3
 Note: S3 bucket must be created beforehand. 
 
-# Requirements
+#### Requirements
 python 2.x, pip, AWS account (for S3)
 
-# How to run?
+#### How to run?
 1. Put S3 credentials under ```etc/conf/settings.py```. Other configurations can also be changed but they are optional.
-2. Move to current project-dir & create virual environment and then activate it as
+2. Move to ```<project-dir>```, create virual environment and then activate it as
 
 
 ```sh
@@ -17,20 +17,20 @@ $ source .environment/bin/activate
 ```
 
 
-3. Add project to PYTHONPATH as 
+3. Add project to ```PYTHONPATH``` as 
 
 ```sh 
-export PYTHONPATH="$PYTHONPATH:." # . corresponds to current directory(project-dir)
+$ export PYTHONPATH="$PYTHONPATH:." # . corresponds to current directory(project-dir)
 ```
 
 3. Go to project root and install requirements/dependencies as 
 
 ```sh 
-pip install -r requirements.txt
+$ pip install -r requirements.txt
 ```
 
 4. Then run sync.py as  
 
 ```sh
-python tests/sync.py
+$ python tests/sync.py
 ```
