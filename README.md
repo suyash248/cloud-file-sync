@@ -8,7 +8,7 @@ Python 2.x, pip, AWS account (for S3)
 
 ### How to run?
 1. Put S3 credentials under ```etc/conf/settings.py```. Other configurations can also be changed but they are optional.
-2. Move to ```<project-dir>```, create virual environment and then activate it as
+2. Move to ```<project-dir>```, create virtual environment and then activate it as
 
 
 ```sh
